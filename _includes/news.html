@@ -2,20 +2,27 @@
   <h2>news</h2>
   {% if site.news  %}
     <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-      {% assign news = site.news | reverse %}
-      {% for item in news limit: site.news_limit %}
-        <tr>
-          <th scope="row" style="width: 10%">{{ item.date | date: "%b %-d, %Y" }}</th>
-          <td>
-            {% if item.inline %}
-              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-            {% else %}
-              <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-            {% endif %}
-          </td>
-        </tr>
-      {% endfor %}
+      <table class="table table-sm table-borderless" style="width: 100%">
+        <colgroup>
+           <col span="1" style="width: 10%;">
+           <col span="1" style="width: 90%;">
+        </colgroup>
+      <!-- Put <thead>, <tbody>, and <tr>'s here! -->
+      <tbody>
+        {% assign news = site.news | reverse %}
+        {% for item in news limit: site.news_limit %}
+          <tr>
+            <th scope="row" style="width: 15%">{{ item.date | date: "%b %-d, %Y" }}</th>
+            <td>
+              {% if item.inline %}
+                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+              {% else %}
+                <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
       </table>
     </div>
   {% else %}
