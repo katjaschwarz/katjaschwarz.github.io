@@ -121,6 +121,7 @@ exclude:
   - _pages/teaching
   - _pages/projects
   - _pages/publications
+  - _posts    # exclude since it causes bug on github
 keep_files:
   - CNAME
   - .nojekyll
