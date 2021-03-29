@@ -2,23 +2,19 @@
 layout: about
 title: about
 permalink: /
-description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: PhD Candidate in Computer Vision @ <a href="https://uni-tuebingen.de/en/">Tuebingen University</a> and the <a href="https://www.is.mpg.de/en">Max Planck Institute for Intelligent Systems</a>
+
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.png
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+social: true  # includes social icons at end of description
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/){:target="\_blank"} and [Academicons](https://jpswalsh.github.io/academicons/){:target="\_blank"}, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I am a PhD student in the [Autonomous Vision Group (AVG)](https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/home/) at Tuebingen University, advised by [Andreas Geiger](https://avg.is.tuebingen.mpg.de/person/ageiger).
+Prior to this, I was an undergraduate at [Heidelberg University](https://www.uni-heidelberg.de/en), where I worked with [Bjoern Ommer](https://hci.iwr.uni-heidelberg.de/people/bommer). My research is in computer vision, particularly in the areas of generative models and continuous 3D representations.
