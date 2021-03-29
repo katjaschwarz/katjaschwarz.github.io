@@ -253,9 +253,14 @@ tons of practical tips on GAN training.
   <ol class="bibliography"><li><div class="row">
   <div class="col-sm-2 abbr">
   
+  
+    <div class="image">
+      <img src="/assets/teaser/graf.gif" alt="GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis" style="width: 12em;" />
+    </div>
+  
   </div>
 
-  <div id="Schwarz2020NEURIPS" class="col-sm-8">
+  <div id="Schwarz2020NEURIPS" class="col-sm-10" style="padding-left: 6rem">
     
       <div class="title">GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis</div>
       <div class="author">
@@ -349,15 +354,25 @@ tons of practical tips on GAN training.
 
     <div class="links">
     
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
     
     
     
       
-      <a href="/assets/pdf/Schwarz2020NEURIPS.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      <a href="http://www.cvlibs.net/publications/Schwarz2020NEURIPS.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
       
     
     
+      
+      <a href="http://www.cvlibs.net/publications/Schwarz2020NEURIPS_supplementary.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
+      
     
+    
+      <a href="https://autonomousvision.github.io/graf/" class="btn btn-sm z-depth-0" role="button" target="_blank">Blog</a>
+    
+    
+      <a href="https://github.com/autonomousvision/graf" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
     
     
     
@@ -366,15 +381,39 @@ tons of practical tips on GAN training.
 
     <!-- Hidden abstract block -->
     
+    <div class="abstract hidden">
+      <p>While 2D generative adversarial networks have enabled high-resolution image synthesis,
+  they largely lack an understanding of the 3D world and the image formation process. Thus, they do
+  not provide precise control over camera viewpoint or object pose. To address this problem, several
+  recent approaches leverage intermediate voxel-based representations in combination with differentiable
+  rendering. However, existing methods either produce low image resolution or fall short in disentangling
+  camera and scene properties, e.g., the object identity may vary with the viewpoint. In this paper,
+  we propose a generative model for radiance fields which have recently proven successful for novel view
+  synthesis of a single scene. In contrast to voxel-based representations, radiance fields are not
+  confined to a coarse discretization of the 3D space, yet allow for disentangling camera and scene
+  properties while degrading gracefully in the presence of reconstruction ambiguity. By introducing a
+  multi-scale patch-based discriminator, we demonstrate synthesis of high-resolution images while training
+  our model from unposed 2D images alone. We systematically analyze our approach on several challenging
+  synthetic and real-world datasets. Our experiments reveal that radiance fields are a powerful
+  representation for generative image synthesis, leading to 3D consistent models that render with high
+  fidelity.
+</p>
+    </div>
+    
   </div>
 </div>
 </li>
 <li><div class="row">
   <div class="col-sm-2 abbr">
   
+  
+    <div class="image">
+      <img src="/assets/teaser/controllableGAN.gif" alt="Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis" style="width: 12em;" />
+    </div>
+  
   </div>
 
-  <div id="Liao2020CVPR" class="col-sm-8">
+  <div id="Liao2020CVPR" class="col-sm-10" style="padding-left: 6rem">
     
       <div class="title">Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis</div>
       <div class="author">
@@ -458,7 +497,7 @@ tons of practical tips on GAN training.
 
       <div class="periodical">
       
-        <em>In  Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</em>
+        <em>In Proc. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</em>
       
       
         2020
@@ -468,22 +507,57 @@ tons of practical tips on GAN training.
 
     <div class="links">
     
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
     
     
     
       
-      <a href="/assets/pdf/Liao2020CVPR.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      <a href="http://www.cvlibs.net/publications/Liao2020CVPR.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
       
     
     
+      
+      <a href="http://www.cvlibs.net/publications/Liao2020CVPR_supplementary.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Supp</a>
+      
     
     
+      <a href="https://autonomousvision.github.io/controllable-gan/" class="btn btn-sm z-depth-0" role="button" target="_blank">Blog</a>
     
+    
+      <a href="https://github.com/autonomousvision/controllable_image_synthesis" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
+    
+    
+      
+      <a href="http://www.cvlibs.net/publications/Liao2020CVPR_poster.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Poster</a>
+      
+    
+    
+      
+      <a href="http://www.cvlibs.net/publications/Liao2020CVPR_slides.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">Slides</a>
+      
     
     
     </div>
 
     <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>In recent years, Generative Adversarial Networks have achieved impressive results
+   in photorealistic image synthesis. This progress nurtures hopes that one day the classical
+   rendering pipeline can be replaced by efficient models that are learned directly from images.
+   However, current image synthesis models operate in the 2D domain where disentangling 3D properties
+   such as camera viewpoint or object pose is challenging. Furthermore, they lack an interpretable
+   and controllable representation. Our key hypothesis is that the image generation process should
+   be modeled in 3D space as the physical world surrounding us is intrinsically three-dimensional.
+   We define the new task of 3D controllable image synthesis and propose an approach for solving it
+   by reasoning both in 3D space and in the 2D image domain. We demonstrate that our model is able to
+   disentangle latent 3D factors of simple multi-object scenes in an unsupervised fashion from raw
+   images. Compared to pure 2D baselines, it allows for synthesizing scenes that are consistent wrt.
+   changes in viewpoint or object pose. We further evaluate various 3D representations in terms of
+   their usefulness for this challenging task.
+   </p>
+    </div>
     
   </div>
 </div>
