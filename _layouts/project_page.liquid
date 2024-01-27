@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include head.liquid %}
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="../assets/css/project_page.css">
+  </head>
+
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    <!-- Header -->
+    {% include dropdown_header.liquid %}
+
+    <!-- Content -->
+    <div class="container">
+      <div style="text-align: center;">
+        <h1>{{ page.title }}</h1>
+        <h3>{{ page.subtitle }}</h3>
+        <div class="bibentry">
+          {% bibliography --query @*[key={{page.bibkey}}]* -T bib_heading %}
+        </div>
+      </div>
+
+      {{ content }}
+    </div>
+
+    <!-- Footer -->
+    {% include footer.liquid %}
+
+    <!-- JavaScripts -->
+    {% include scripts/jquery.liquid %}
+    {% include scripts/bootstrap.liquid %}
+    {% include scripts/masonry.liquid %}
+    {% include scripts/mermaid.liquid %}
+    {% include scripts/misc.liquid %}
+    {% include scripts/badges.liquid %}
+    {% include scripts/mathjax.liquid %}
+    {% include scripts/analytics.liquid %}
+    {% include scripts/progressBar.liquid %}
+    {% include scripts/wechatModal.liquid %}
+  </body>
+</html>
