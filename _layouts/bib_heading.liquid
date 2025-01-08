@@ -1,0 +1,59 @@
+---
+---
+{% assign authors = entry.author | split: ' and ' %}
+{% for author in authors %}
+  {% assign lastname = author | split: ', ' | first %}
+  {% assign firstname = author | split: ', ' | last %}
+  {% for affiliation in {{page.affiliations}} %}
+    {% assign af_lastname = affiliation.author %}
+    {% if {{af_lastname}} == {{lastname}} %}
+      {% assign af_index = affiliation.index %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if site.scholar.last_name contains lastname %}
+    {% assign af_url = '/' %}
+  {% else %}
+    {% for coauthor in site.data.coauthors[lastname] %}
+      {% assign af_url = coauthor.url %}
+      {% break %}
+    {% endfor %}
+  {% endif %}
+  <span style="font-size: 1.2em;"
+    ><a href="{{af_url}}">
+      {{- firstname }}
+      {{ lastname -}}</a
+    ><sup>
+      {%- for v in af_index -%}
+        {{- v -}}
+        {%- if forloop.last != true %},{% endif -%}
+      {%- endfor -%}
+    </sup>
+    {%- if forloop.last != true %},{% endif -%}
+  </span>
+{% endfor %}
+
+<div>
+  {% for v in page.affiliation_names %}
+    <span style="font-size: 1.2em;"
+      ><sup>{{ forloop.index }}</sup>{{ v -}}
+      {%- if forloop.last != true %},{% endif -%}
+    </span>
+  {% endfor %}
+</div>
+{% if entry.booktitle_short %}
+  <div style="margin-top: 0.5em;">
+    <span style="font-size: 1.4em;">
+      {{- entry.booktitle_short }}
+      {{ entry.year -}}
+    </span>
+  </div>
+{% endif %}
+<div style="margin-top: 0.5em; font-size: 1.7em;">
+  <a href="{{entry.pdf}}">[Paper]</a>
+  {% assign code_size = entry.code | size %}
+  {% if code_size > 0 %}
+    <a href="{{entry.code}}">[Code]</a>
+  {% endif %}
+</div>
