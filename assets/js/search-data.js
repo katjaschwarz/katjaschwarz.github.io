@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-generative-gaussian-splatting",
+          title: "Generative Gaussian Splatting",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/ggs/";
+          },
         },{id: "nav-voxgraf",
           title: "VoxGRAF",
           description: "",
@@ -29,6 +36,13 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/wildfusion/";
+          },
+        },{id: "nav-a-recipe-for-generating-3d-worlds-from-a-single-image",
+          title: "A Recipe for Generating 3D Worlds From a Single Image",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/worlds/";
           },
         },{id: "post-a-post-with-image-galleries",
       
