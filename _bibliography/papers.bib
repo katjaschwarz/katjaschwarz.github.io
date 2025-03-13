@@ -11,7 +11,21 @@ enable_publication_badges: false
 @STRING{ARXIV = {arXiv.org}}
 @STRING{ICLR = {International Conference on Learning Representations}}
 
-@inproceedings{Schwarz2025CVPR,
+
+@inproceedings{Schwarz2025worlds,
+  title = {A Recipe for Generating 3D Worlds From a Single Image},
+  author = {Schwarz, Katja and Rozumny, Denis and Rota Bulo, Samuel and Porzi, Lorenzo, and Kontschieder, Peter},
+  booktitle = ARXIV,
+  booktitle_short = {ARXIV},
+  year = {2025},
+  abstract = {We introduce a recipe for generating immersive 3D worlds from a single image by framing the task as an in-context learning problem for 2D inpainting models. This approach requires minimal training and uses existing generative models. Our process involves two steps: generating coherent panoramas using a pre-trained diffusion model and lifting these into 3D with a metric depth estimator. We then fill unobserved regions by conditioning the inpainting model on rendered point clouds, requiring minimal fine-tuning. Tested on both synthetic and real images, our method produces high-quality 3D environments suitable for VR display. By explicitly modeling the 3D structure of the generated environment from the start, our approach consistently outperforms state-of-the-art, video synthesis-based methods along multiple quantitative image quality metrics.},
+  pdf = {},
+  preview = {worlds.gif},
+  website = {https://katjaschwarz.github.io/worlds},
+  selected = True,
+}
+
+@inproceedings{Schwarz2025ggs,
   title = {Generative Gaussian Splatting: Generating 3D Scenes with Video Diffusion Priors},
   author = {Schwarz, Katja and M\"uller, Norman and Kontschieder, Peter},
   booktitle = ARXIV,
