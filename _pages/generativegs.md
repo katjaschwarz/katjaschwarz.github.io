@@ -30,7 +30,7 @@ bibkey: Schwarz2025CVPR
 </div>
 </div>
 
-{% include video.liquid path="assets/img/ggs/teaser.mp4" class="img-fluid" controls=false autoplay=true speed=2
+{% include video.liquid path="assets/img/ggs/ggs_teaser.mp4" class="img-fluid" controls=false autoplay=true speed=2
 loop=true muted=true preload=true width="100%" %}
 
 <div class="caption">
@@ -65,103 +65,151 @@ Our approach, GGS, directly synthesizes a 3D representation, which is parameteri
 
 <div class="section">
 <h2 class="text-left text-secondary">
-    Baseline Comparison
+    Sequence Synthesis From a Single Image
 </h2>
 <p>
-  We find that existing GAN-based approaches struggle with very low sample diversity (mode collapse) on multi-modal datasets with complex camera distributions like ImageNet.
-  The results below show samples from WildFusion and <a href="https://snap-research.github.io/3dgp/">3DGP</a>, the strongest baseline, where each row corresponds to samples of one class.
-  While 3DGP collapses and produces almost identical samples within classes, WildFusion produces diverse, high-quality samples because it builds upon Latent Diffusion Models.
+  Existing pose-conditional diffusion models without 3D representation often struggle to generate 3D consistent sequences.
+  While <a href="https://hehao13.github.io/projects-CameraCtrl/">CameraCtrl</a> can generate reasonable sequences, it might not accurately follow the given camera trajectory. E.g., compare the position of the chair in the lower part of the image at the end of the sequence. 
+  <a href="https://drexubery.github.io/ViewCrafter/">ViewCrafter</a> follows the trajectory more closely but often fails to preserve the appearance of the content. It also relies on correct depth estimates and wrong depth prediction can result in artifacts in the generated sequences, see bottom row.
 </p>
 <div class="row">
-    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        <h4>Reference Image</h4>
+        {% include figure.liquid path="assets/img/ggs/results/1_ref/10ad4fc499c48b38.png" class="img-fluid" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
         <h4>GGS</h4>
-        {% include video.liquid path="assets/img/wildfusion/blcomp_ours.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+        {% include video.liquid path="assets/img/ggs/results/1_ref/10ad4fc499c48b38_ours.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        <h4>CameraCtrl</h4>
+        {% include video.liquid path="assets/img/ggs/results/1_ref/10ad4fc499c48b38_cameractrl.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
         <h4>ViewCrafter</h4>
-        {% include video.liquid path="assets/img/wildfusion/blcomp_3dgp.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+        {% include video.liquid path="assets/img/ggs/results/1_ref/10ad4fc499c48b38_vc.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include figure.liquid path="assets/img/ggs/results/1_ref/179ff8424ec7ad13.png" class="img-fluid" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/1_ref/179ff8424ec7ad13_ours.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/1_ref/179ff8424ec7ad13_cameractrl.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/1_ref/179ff8424ec7ad13_vc.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include figure.liquid path="assets/img/ggs/results/1_ref/75d29d69b8.png" class="img-fluid" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/1_ref/75d29d69b8_ours.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/1_ref/75d29d69b8_cameractrl.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/1_ref/75d29d69b8_vc.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
 </div>
 </div>
 
 <div class="section">
 <h2 class="text-left text-secondary">
-Autoencoder for Compression and Novel View Synthesis
+    3D Scene Synthesis From a Single Image
 </h2>
 <p>
-Our 3D-aware autoencoder performs both compression and enables novel-view synthesis. Notably, it is trained from large collections of unposed images without any direct multiview supervision.
-The learned compressed 3D-aware latent space can then be used to train a latent diffusion model. In addition, we can leverage our autoencoder to more efficiently perform novel view synthesis for a single given image than common GAN-based methods relying on GAN-inversion.
-We show pairs of input images and synthesized novel views from our autoencoder below.
+  Below, we show 3D Gaussian splats generated from a single image using GGS. We also provide the reference images and generated feature splats.
+</p>
+<div class="col-md-12 col-sm-12 col-xs-12 gallery">
+        {% include video.liquid path="assets/img/ggs/results/1_ref/scene_synthesis_single.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+</div>
+</div>
+
+
+<div class="section">
+<h2 class="text-left text-secondary">
+View Extrapolation From Two Images
+</h2>
+<p>
+ <a href="https://geometric-rl.mpi-inf.mpg.de/latentsplat/">LatentSplat</a> performs well for small camera baselines but its GAN-based generative decoder struggles with large viewpoint extrapolations. Instead, our diffusion model can generate reasonable and consistent images also for larger extrapolations. Similar to the single image setting, ViewCrafter performs overall well wrt. the camera trajectory but can alter the generated content between frames.
 </p>
 <div class="row">
-<div class="col-md-12 col-sm-12 col-xs-12 gallery">
-  <h4>ImageNet</h4>
-        {% include video.liquid path="assets/img/wildfusion/ae1.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        <h4>Reference Image</h4>
+        {% include figure.liquid path="assets/img/ggs/results/2_ref/3ad4793daf6adc19.png" class="img-fluid" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        <h4>GGS</h4>
+        {% include video.liquid path="assets/img/ggs/results/2_ref/3ad4793daf6adc19_ours.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        <h4>CameraCtrl</h4>
+        {% include video.liquid path="assets/img/ggs/results/2_ref/3ad4793daf6adc19_latentsplat.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        <h4>ViewCrafter</h4>
+        {% include video.liquid path="assets/img/ggs/results/2_ref/3ad4793daf6adc19_vc.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
 </div>
-<div class="col-md-12 col-sm-12 col-xs-12 gallery">
-        {% include video.liquid path="assets/img/wildfusion/ae2.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
-</div>
-<div class="col-md-12 col-sm-12 col-xs-12 gallery">
-  <h4>SDIP Dog/Horse/Elephant</h4>
-        {% include video.liquid path="assets/img/wildfusion/ae_sdip.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
-</div>
-</div>
-</div>
-
-<div class="section">
-<h2 class="text-left text-secondary">
-Generated Samples
-</h2>
-<p>
-We train a latent diffusion model on the compressed 3D-aware latent space of the 3D-aware autoencoder.
-Our 3D-aware LDM enables high-quality 3D-aware image synthesis with reasonable geometry and strong distribution coverage / high sample diversity.
-  </p>
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-      <h4>ImageNet</h4>
-        {% include video.liquid path="assets/img/wildfusion/gen1.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+<div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include figure.liquid path="assets/img/ggs/results/2_ref/17a39d87a22ac1ec.png" class="img-fluid" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-        {% include video.liquid path="assets/img/wildfusion/gen2.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/2_ref/17a39d87a22ac1ec_ours.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-        {% include video.liquid path="assets/img/wildfusion/gen3.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/2_ref/17a39d87a22ac1ec_latentsplat.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-             {% include video.liquid path="assets/img/wildfusion/gen4.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/2_ref/17a39d87a22ac1ec_vc.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-      <h4>SDIP Dog/Horse/Elephant</h4>
-              {% include video.liquid path="assets/img/wildfusion/gen_sdip.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include figure.liquid path="assets/img/ggs/results/2_ref/e8e81396b6.png" class="img-fluid" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/2_ref/e8e81396b6_ours.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/2_ref/e8e81396b6_latentsplat.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 gallery">
+        {% include video.liquid path="assets/img/ggs/results/2_ref/e8e81396b6_vc.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
 </div>
 </div>
 
 <div class="section">
 <h2 class="text-left text-secondary">
-Interpolation
+    3D Scene Synthesis From Two Images
 </h2>
 <p>
-Using WildFusion, we can interpolate in a semantically meaningful way between two given single images while simultaneously allowing to change the viewpoint. Note that the geometry also changes accordingly. Specifically, we encode two images into latent space, further encode into the diffusion model’s Gaussian prior space (inverse DDIM), interpolate the resulting encodings, and generate the corresponding 3D images along the interpolation path.
+  Below, we compare the generated 3D scenes from two images for GGS and the strongest baseline ViewCrafter. Results were obtained by running Splatfacto as an off-the-shelf 3D reconstruction algorithm. 
+  As GGS directly generates a 3D representation with its 3D decoder branch, we can leverage the generated 3D splats as initialization for the reconstruction.
 </p>
-<div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-    {% include video.liquid path="assets/img/wildfusion/interp.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
-</div>
+        {% include video.liquid path="assets/img/ggs/results/2_ref/scene_synthesis_two.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
 </div>
 </div>
 
 <div class="section">
 <h2 class="text-left text-secondary">
-Generative Resampling with Different Noise Levels
+    Autoregressive Scene Synthesis From Five Images
 </h2>
 <p>
-We can further use WildFusion to perform 3D-aware generative image resampling. Given an image, we forward diffuse its latent encoding for varying numbers of steps and re-generate from the partially noised encodings. Depending on how far we diffuse, we control how strongly the sample adheres to the input image. For the samples below, we gradually increase the number of diffusion steps from left to right.
+  Lastly, we show results for the conditional vairant of our GGS model. We autoregressively generate larger scenes using only 5 reference images.
 </p>
-<div class="row">
 <div class="col-md-12 col-sm-12 col-xs-12 gallery">
-    {% include video.liquid path="assets/img/wildfusion/refinement.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
-</div>
+        {% include video.liquid path="assets/img/ggs/results/2_ref/scene_synthesis_autoregressive.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
 </div>
 </div>
 
