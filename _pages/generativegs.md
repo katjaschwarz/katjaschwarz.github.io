@@ -1,6 +1,7 @@
 ---
 layout: project_page
 permalink: /ggs/
+shorttitle: GGS
 title: Generative Gaussian Splatting
 subtitle: Generating 3D Scenes with Video Diffusion Priors
 nav: true
