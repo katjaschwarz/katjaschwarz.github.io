@@ -2,7 +2,7 @@
 layout: project_page
 permalink: /worlds/
 title: A Recipe for Generating 3D Worlds From a Single Image
-#subtitle: 
+#subtitle:
 nav: true
 nav_order: 2
 horizontal: false
@@ -144,7 +144,6 @@ loop=true muted=true preload=true width="100%" %}
         {% include video.liquid path="assets/img/worlds/wl29.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
 </div>
-
 
 <div class="section">
 <h2 class="text-left text-secondary">

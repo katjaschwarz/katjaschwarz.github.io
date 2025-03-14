@@ -132,7 +132,6 @@ Our approach, GGS, directly synthesizes a 3D representation, which is parameteri
 </div>
 </div>
 
-
 <div class="section">
 <h2 class="text-left text-secondary">
 View Extrapolation From Two Images
