@@ -7,7 +7,7 @@ nav: true
 nav_order: 2
 horizontal: false
 
-affiliation_names: [Meta Reality Labs]
+affiliation_names: [Meta Reality Labs Zurich, Switzerland]
 affiliations:
   - author: Schwarz
     index: [1]
