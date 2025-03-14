@@ -385,7 +385,12 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "news-our-paper-on-3d-controllable-image-synthesis-got-accepted-at-cvpr-2020",
+    },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-our-paper-on-3d-controllable-image-synthesis-got-accepted-at-cvpr-2020",
           title: 'Our paper on 3D-controllable image synthesis got accepted at CVPR 2020.',
           description: "",
           section: "News",},{id: "news-our-graf-paper-was-accepted-at-neurips-2020",
