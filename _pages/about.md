@@ -16,7 +16,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-I am a Research Scientist at [Meta](https://www.meta.com/).
+I am a Research Scientist at Meta.
 
 My research lies at the intersection of computer vision and graphics and focuses on 3D vision. In particular, I am
 interested in enabeling machines to infer 3D representations from sparse observations, such as 2D images. I am
