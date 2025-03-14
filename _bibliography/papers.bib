@@ -1,115 +1,188 @@
 ---
+enable_publication_badges: false
 ---
 
-@string{aps = {American Physical Society,}}
+@STRING{CVPR = {Proc. IEEE Conf. on Computer Vision and Pattern	Recognition (CVPR)}}
+@STRING{ECCV = {Proc. of the European Conf. on Computer Vision (ECCV)}}
+@STRING{ICCV = {Proc. of the IEEE International Conf. on Computer Vision (ICCV)}}
+@STRING{THREEDV = {Proc. of the International Conf. on 3D Vision (3DV)}}
+@STRING{NEURIPS = {Advances in Neural Information Processing Systems (NeurIPS)}}
+@STRING{SIGGRAPH = {ACM Trans. on Graphics}}
+@STRING{ARXIV = {arXiv.org}}
+@STRING{ICLR = {International Conference on Learning Representations}}
 
-@book{einstein1920relativity,
-  title={Relativity: the Special and General Theory},
-  author={Einstein, Albert},
-  year={1920},
-  publisher={Methuen & Co Ltd},
-  html={relativity.html}
+@inproceedings{Schwarz2024ICLR,
+  title = {WildFusion: Learning 3D-Aware Latent Diffusion Models in View Space},
+  author = {Schwarz, Katja and Wook Kim, Seung and Gao, Jun and Fidler, Sanja and Geiger, Andreas and Kreis, Karsten},
+  booktitle = ICLR,
+  booktitle_short = {ICLR},
+  year = {2024},
+  abstract = {Modern learning-based approaches to 3D-aware image synthesis achieve high photorealism and 3D-consistent viewpoint changes for the generated images. Existing approaches represent instances in a shared canonical space. However, for in-the-wild datasets a shared canonical system can be difficult to define or might not even exist. In this work, we instead model instances in <em>view space</em>, alleviating the need for posed images and learned camera distributions. We find that in this setting, existing GAN-based methods are prone to generating flat geometry and struggle with distribution coverage. We hence propose <em>WildFusion</em>, a new approach to 3D-aware image synthesis based on latent diffusion models (LDMs). We first train an autoencoder that infers a compressed latent representation, which additionally captures the images' underlying 3D structure and enables not only reconstruction but also novel view synthesis. To learn a faithful 3D representation, we leverage cues from monocular depth prediction. Then, we train a diffusion model in the 3D-aware latent space, thereby enabling synthesis of high-quality 3D-consistent image samples, outperforming recent state-of-the-art GAN-based methods. Importantly, our 3D-aware LDM is trained without any direct supervision from multiview images or 3D geometry and does not require posed images or learned pose or camera distributions. It directly learns a 3D representation without relying on canonical camera coordinates. This opens up promising research avenues for scalable 3D-aware image synthesis and 3D content creation from in-the-wild image data.
+  },
+  pdf = {https://arxiv.org/pdf/2311.13570.pdf},
+  code = {},
+  blog = {},
+  preview = {wildfusion.gif},
+  website = {https://katjaschwarz.github.io/wildfusion},
+  selected = True,
 }
 
-@book{einstein1956investigations,
-  bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+@inproceedings{Kim2023CVPR,
+  title = {NeuralField-LDM: Scene Generation with Hierarchical Latent Diffusion Models},
+  author = {Kim, Seung Wook and Brown, Bradley and Yin, Kangxue and Kreis, Karsten and Schwarz, Katja and Li, Daiqing and Rombach, Robin and Torralba, Antonio and Fidler, Sanja},
+  booktitle = CVPR,
+  year = {2023},
+  abstract = {Automatically generating high-quality real world 3D scenes is of enormous interest for applications such as virtual reality and robotics simulation. Towards this goal, we introduce NeuralField-LDM, a generative model capable of synthesizing complex 3D environments. We leverage Latent Diffusion Models that have been successfully utilized for efficient high-quality 2D content creation. We first train a scene auto-encoder to express a set of image and pose pairs as a neural field, represented as density and feature voxel grids that can be projected to produce novel views of the scene. To further compress this representation, we train a latent-autoencoder that maps the voxel grids to a set of latent representations. A hierarchical diffusion model is then fit to the latents to complete the scene generation pipeline. We achieve a substantial improvement over existing state-of-the-art scene generation models. Additionally, we show how NeuralField-LDM can be used for a variety of 3D content creation applications, including conditional scene generation, scene inpainting and scene style manipulation.
+  },
+  pdf = {https://research.nvidia.com/labs/toronto-ai/NFLDM/assets/paper.pdf},
+  code = {},
+  blog = {},
+  preview = {nfldm.gif},
+  website = {https://research.nvidia.com/labs/toronto-ai/NFLDM/},
+  selected = False,
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
+@inproceedings{Schwarz2022NEURIPS,
+  title = {VoxGRAF: Fast 3D-Aware Image Synthesis with Sparse Voxel Grids},
+  author = {Schwarz, Katja and Sauer, Axel and Niemeyer, Michael and Liao, Yiyi and Geiger, Andreas},
+  booktitle = NEURIPS,
+  booktitle_short = {NeurIPS},
+  year = {2022},
+  abstract = {State-of-the-art 3D-aware generative models rely on coordinate-based MLPs to parameterize 3D radiance fields. While demonstrating impressive results, querying an MLP for every sample along each ray leads to slow rendering. Therefore, existing approaches often render low-resolution feature maps and process them with an upsampling network to obtain the final image. Albeit efficient, neural rendering often entangles viewpoint and content such that changing the camera pose results in unwanted changes of geometry or appearance. Motivated by recent results in voxel-based novel view synthesis, we investigate the utility of sparse voxel grid representations for fast and 3D-consistent generative modeling in this paper. Our results demonstrate that monolithic MLPs can indeed be replaced by 3D convolutions when combining sparse voxel grids with progressive growing, free space pruning and appropriate regularization. To obtain a compact representation of the scene and allow for scaling to higher voxel resolutions, our model disentangles the foreground object (modeled in 3D) from the background (modeled in 2D). In contrast to existing approaches, our method requires only a single forward pass to generate a full 3D scene. It hence allows for efficient rendering from arbitrary viewpoints while yielding 3D consistent results with high visual fidelity.
+},
+  pdf = {https://www.cvlibs.net/publications/Schwarz2022NEURIPS.pdf},
+  code = {https://github.com/autonomousvision/voxgraf},
+  blog = {https://www.machinelearningforscience.de/en/escaping-platos-cave-teaching-machines-the-3d-nature-of-our-world},
+  preview = {voxgraf.gif},
+  website = {https://katjaschwarz.github.io/voxgraf},
+  selected = True,
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  location={New Jersey},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  google_scholar_id={qyhmnyLat1gC},
-  video={https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info={. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  annotation={* Example use of superscripts<br>† Albert Einstein},
-  selected={true},
-  inspirehep_id = {3255}
+@inproceedings{Wang2022ECCV,
+  title = {ARAH: Animatable Volume Rendering of Articulated Human SDFs},
+  author = {Wang, Shaofei and Schwarz, Katja and Geiger, Andreas and Tang, Siyu},
+  booktitle = ECCV,
+  year = {2022},
+  abstract = {Combining human body models with differentiable rendering has recently enabled animatable avatars of clothed humans from sparse sets of multi-view RGB videos. While state-of-the-art approaches achieve realistic appearance with neural radiance fields (NeRF), the inferred geometry often lacks detail due to missing geometric constraints. Further, animating avatars in out-of-distribution poses is not yet possible because the mapping from observation space to canonical space does not generalize faithfully to unseen poses. In this work, we address these shortcomings and propose a model to create animatable clothed human avatars with detailed geometry that generalize well to out-of-distribution poses. To achieve detailed geometry, we combine an articulated implicit surface representation with volume rendering. For generalization, we propose a novel joint root-finding algorithm for simultaneous ray-surface intersection search and correspondence search. Our algorithm enables efficient point sampling and accurate point canonicalization while generalizing well to unseen poses. We demonstrate that our proposed pipeline can generate clothed avatars with high-quality pose-dependent geometry and appearance from a sparse set of multi-view RGB videos. Our method achieves state-of-the-art performance on geometry and appearance reconstruction while creating animatable avatars that generalize well to out-of-distribution poses beyond the small number of training poses.
+},
+  pdf = {https://www.cvlibs.net/publications/Wang2022ECCV.pdf},
+  code = {https://github.com/taconite/arah-release},
+  poster = {https://www.cvlibs.net/publications/Wang2022ECCV_poster.pdf},
+  video = {https://www.youtube.com/watch?v=PzumWPOpvDI},
+  preview = {arah.gif},
+  website = {https://neuralbodies.github.io/arah/},
+  selected = False,
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
+@inproceedings{Sauer2022SIGGRAPH,
+  title = {StyleGAN-XL: Scaling StyleGAN to Large Diverse Datasets},
+  author = {Sauer, Axel and Schwarz, Katja and Geiger, Andreas},
+  booktitle = SIGGRAPH,
+  year = {2022},
+  abstract = {Computer graphics has experienced a recent surge of data-centric approaches for photorealistic and controllable content creation. StyleGAN in particular sets new standards for generative modeling regarding image quality and controllability. However, StyleGAN's performance severely degrades on large unstructured datasets such as ImageNet. StyleGAN was designed for controllability; hence, prior works suspect its restrictive design to be unsuitable for diverse datasets. In contrast, we find the main limiting factor to be the current training strategy. Following the recently introduced Projected GAN paradigm, we leverage powerful neural network priors and a progressive growing strategy to successfully train the latest StyleGAN3 generator on ImageNet. Our final model, StyleGAN-XL, sets a new state-of-the-art on large-scale image synthesis and is the first to generate images at a resolution of 1024x1024 at such a dataset scale. We demonstrate that this model can invert and edit images beyond the narrow domain of portraits or specific object~classes.
+},
+  pdf = {https://www.cvlibs.net/publications/Sauer2022SIGGRAPH.pdf},
+  supp = {https://www.cvlibs.net/publications/Sauer2022SIGGRAPH_supplementary.pdf},
+  code = {https://github.com/autonomousvision/stylegan-xl},
+  video = {https://www.youtube.com/watch?v=c-PjRXVG8ZI},
+  preview = {styleganxl.gif},
+  website = {https://sites.google.com/view/stylegan-xl/},
+  selected = True,
 }
 
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
+@inproceedings{Schwarz2021NEURIPS,
+  title = {On the Frequency Bias of Generative Models},
+  author = {Schwarz, Katja and Liao, Yiyi and Geiger, Andreas},
+  booktitle = NEURIPS,
+  year = {2021},
+  abstract = {The key objective of Generative Adversarial Networks (GANs) is to generate new data
+  with the same statistics as the provided training data. However, multiple recent works show that
+  state-of-the-art architectures yet struggle to achieve this goal. In particular, they report an
+  elevated amount of high frequencies in the spectral statistics which makes it straightforward to
+  distinguish real and generated images. Explanations for this phenomenon are controversial: While
+  most works attribute the artifacts to the generator, other works point to the discriminator. We
+  take a sober look at those explanations and provide insights on what makes proposed measures
+  against high-frequency artifacts effective. To achieve this, we first independently assess the
+  architectures of both the generator and discriminator and investigate if they exhibit a frequency
+  bias that makes learning the distribution of high-frequency content particularly problematic.
+  Based on these experiments, we make the following four observations: 1) Different upsampling
+  operations bias the generator towards different spectral properties. 2) Checkerboard artifacts
+  introduced by upsampling cannot explain the spectral discrepancies alone as the generator is able
+  to compensate for these artifacts. 3) The discriminator does not struggle with detecting high
+  frequencies per se but rather struggles with frequencies of low magnitude. 4) The downsampling
+  operations in the discriminator can impair the quality of the training signal it provides. In
+  light of these findings, we analyze proposed measures against high-frequency artifacts in
+  state-of-the-art GAN training but find that none of the existing approaches can fully resolve
+  spectral artifacts yet. Our results suggest that there is great potential in improving the
+  discriminator and that this could be key to match the distribution of the training data more
+  closely.
+},
+  pdf = {http://www.cvlibs.net/publications/Schwarz2021NEURIPS.pdf},
+  supp = {http://www.cvlibs.net/publications/Schwarz2021NEURIPS_supplementary.pdf},
+  code = {https://github.com/autonomousvision/frequency_bias},
+  blog = {https://autonomousvision.github.io/frequency-bias/},
+  poster = {http://www.cvlibs.net/publications/Schwarz2021NEURIPS_poster.pdf},
+  video = {https://www.youtube.com/watch?v=jbcB-hHoOIA},
+  preview = {frequency_bias.gif},
+  selected = True,
 }
 
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
+@inproceedings{Schwarz2020NEURIPS,
+  title = {GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis},
+  author = {Schwarz, Katja and Liao, Yiyi and Niemeyer, Michael and Geiger, Andreas},
+  booktitle = NEURIPS,
+  year = {2020},
+  abstract = {While 2D generative adversarial networks have enabled high-resolution image synthesis,
+  they largely lack an understanding of the 3D world and the image formation process. Thus, they do
+  not provide precise control over camera viewpoint or object pose. To address this problem, several
+  recent approaches leverage intermediate voxel-based representations in combination with differentiable
+  rendering. However, existing methods either produce low image resolution or fall short in disentangling
+  camera and scene properties, e.g., the object identity may vary with the viewpoint. In this paper,
+  we propose a generative model for radiance fields which have recently proven successful for novel view
+  synthesis of a single scene. In contrast to voxel-based representations, radiance fields are not
+  confined to a coarse discretization of the 3D space, yet allow for disentangling camera and scene
+  properties while degrading gracefully in the presence of reconstruction ambiguity. By introducing a
+  multi-scale patch-based discriminator, we demonstrate synthesis of high-resolution images while training
+  our model from unposed 2D images alone. We systematically analyze our approach on several challenging
+  synthetic and real-world datasets. Our experiments reveal that radiance fields are a powerful
+  representation for generative image synthesis, leading to 3D consistent models that render with high
+  fidelity.
+},
+  pdf = {http://www.cvlibs.net/publications/Schwarz2020NEURIPS.pdf},
+  supp = {http://www.cvlibs.net/publications/Schwarz2020NEURIPS_supplementary.pdf},
+  code = {https://github.com/autonomousvision/graf},
+  blog = {https://autonomousvision.github.io/graf/},
+  poster = {http://www.cvlibs.net/publications/Schwarz2020NEURIPS_poster.pdf},
+  video = {https://www.youtube.com/watch?v=akQf7WaCOHo},
+  preview = {graf.gif},
+  selected = True,
 }
 
-@Article{einstein1905photoelectriceffect,
-  bibtex_show={true},
-  abbr={Ann. Phys.},
-  title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
-  author={Albert Einstein},
-  abstract={This is the abstract text.},
-  journal={Ann. Phys.},
-  volume={322},
-  number={6},
-  pages={132--148},
-  year={1905},
-  doi={10.1002/andp.19053220607},
-  award={Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name={Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif},
-  abbr={Vision}
+@inproceedings{Liao2020CVPR,
+  title = {Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis},
+  author = {Liao, Yiyi and Schwarz, Katja and Mescheder, Lars and Geiger, Andreas},
+  booktitle = CVPR,
+  year = {2020},
+  abstract = {In recent years, Generative Adversarial Networks have achieved impressive results
+   in photorealistic image synthesis. This progress nurtures hopes that one day the classical
+   rendering pipeline can be replaced by efficient models that are learned directly from images.
+   However, current image synthesis models operate in the 2D domain where disentangling 3D properties
+   such as camera viewpoint or object pose is challenging. Furthermore, they lack an interpretable
+   and controllable representation. Our key hypothesis is that the image generation process should
+   be modeled in 3D space as the physical world surrounding us is intrinsically three-dimensional.
+   We define the new task of 3D controllable image synthesis and propose an approach for solving it
+   by reasoning both in 3D space and in the 2D image domain. We demonstrate that our model is able to
+   disentangle latent 3D factors of simple multi-object scenes in an unsupervised fashion from raw
+   images. Compared to pure 2D baselines, it allows for synthesizing scenes that are consistent wrt.
+   changes in viewpoint or object pose. We further evaluate various 3D representations in terms of
+   their usefulness for this challenging task.
+   },
+  pdf = {http://www.cvlibs.net/publications/Liao2020CVPR.pdf},
+  supp = {http://www.cvlibs.net/publications/Liao2020CVPR_supplementary.pdf},
+  code = {https://github.com/autonomousvision/controllable_image_synthesis},
+  blog = {https://autonomousvision.github.io/controllable-gan/},
+  poster = {http://www.cvlibs.net/publications/Liao2020CVPR_poster.pdf},
+  video = {https://www.youtube.com/watch?v=ygQCgGC0Lm8},
+  preview = {controllableGAN.gif},
+  selected = False,
 }

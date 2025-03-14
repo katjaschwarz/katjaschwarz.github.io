@@ -1,34 +1,43 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"Tang":
+  - firstname: ["Siyu", "S."]
+    url: https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"Wang":
+  - firstname: ["Shaofei", "S."]
+    url: https://taconite.github.io/
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"Sauer":
+  - firstname: ["Axel", "A."]
+    url: https://axelsauer.com/
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"Liao":
+  - firstname: ["Yiyi", "Y."]
+    url: https://yiyiliao.github.io/
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"Geiger":
+  - firstname: ["Andreas", "A."]
+    url: http://www.cvlibs.net/
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"Niemeyer":
+  - firstname: ["Michael", "M."]
+    url: https://m-niemeyer.github.io/
 
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+"Mescheder":
+  - firstname: ["Lars", "L."]
+    url: https://avg.is.tuebingen.mpg.de/person/lmescheder
 
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
+"Kreis":
+  - firstname: ["Karsten", "K."]
+    url: https://karstenkreis.github.io/
 
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"Gao":
+  - firstname: ["Jun", "J."]
+    url: https://www.cs.toronto.edu/~jungao/
+
+"Wook Kim":
+  - firstname: ["Seung", "S."]
+    url: https://seung-kim.github.io/seungkim/
+
+"Fidler":
+  - firstname: ["Sanja", "S."]
+    url: https://www.cs.utoronto.ca/~fidler/

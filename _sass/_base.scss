@@ -343,6 +343,15 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+.navbar-light-noframe {
+  @extend .navbar-light;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0px;
+  height: 2.5em;
+}
+
 .navbar-toggler {
   .icon-bar {
     display: block;
@@ -401,7 +410,7 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2rem;
 
     a {
       img {
@@ -868,6 +877,18 @@ footer.sticky-bottom {
     div.award.hidden.open {
       border-color: var(--global-highlight-color);
     }
+  }
+}
+
+.bibentry {
+  h2.bibliography {
+    font-size: 0px;
+  }
+
+  ol.bibliography {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
   }
 }
 
