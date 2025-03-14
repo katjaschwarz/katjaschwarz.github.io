@@ -15,7 +15,7 @@ affiliations:
     index: [1]
   - author: Kontschieder
     index: [1]
-bibkey: Schwarz2025CVPR
+bibkey: Schwarz2025ggs
 ---
 
 {% include figure.liquid path="assets/img/ggs/teaser.jpg" class="img-fluid" %}
