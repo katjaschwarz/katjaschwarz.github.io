@@ -25,6 +25,6 @@ passionate about leveraging such representations for generative modeling in 2D a
 I did my PhD in
 the [Autonomous Vision Group (AVG)](https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/home/)
 at [Tübingen University](https://uni-tuebingen.de/en/) and
-the [Max Planck Institute for Intelligent Systems](https://is.mpg.de/), advised by [Andreas Geiger](http://cvlibs.net/).
+the [Max Planck Institute for Intelligent Systems](https://imprs.is.mpg.de/en), advised by [Andreas Geiger](http://cvlibs.net/).
 Prior to this, I studied Physics at [Heidelberg University](https://www.uni-heidelberg.de/en) where I received my
 bachelor degree in 2016 and master degree in 2018.
