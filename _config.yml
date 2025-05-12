@@ -227,6 +227,7 @@ exclude:
   - _pages/cv
   - _pages/blog
   - _pages/repositories
+  - _pages/generativegs
 keep_files:
   - CNAME
   - .nojekyll
