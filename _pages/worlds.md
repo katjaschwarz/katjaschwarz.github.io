@@ -130,18 +130,44 @@ loop=true muted=true preload=true width="100%" %}
 <h3>More Results</h3>
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+        {% include video.liquid path="assets/img/worlds/wl04.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+        {% include video.liquid path="assets/img/worlds/wl16.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+        {% include video.liquid path="assets/img/worlds/wl17.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
+        {% include video.liquid path="assets/img/worlds/wl05.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
+        {% include video.liquid path="assets/img/worlds/wl07.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
+        {% include video.liquid path="assets/img/worlds/wl08.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
         {% include video.liquid path="assets/img/worlds/wl20.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
         {% include video.liquid path="assets/img/worlds/wl21.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
         {% include video.liquid path="assets/img/worlds/wl26.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
         {% include video.liquid path="assets/img/worlds/wl02.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
         {% include video.liquid path="assets/img/worlds/wl29.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
 </div>
@@ -157,10 +183,12 @@ loop=true muted=true preload=true width="100%" %}
     <div class="col-md-12 col-sm-12 col-xs-12 gallery">
             {% include video.liquid path="assets/img/worlds/rainbow.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
         {% include video.liquid path="assets/img/worlds/noodle.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12 gallery">
+    <div class="col-md-6 col-sm-6 col-xs-6 gallery">
         {% include video.liquid path="assets/img/worlds/cotton_kittens.mp4" class="img-fluid" controls=true autoplay=true loop=true muted=true preload=true width="100%" %}
     </div>
 </div>
