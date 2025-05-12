@@ -308,17 +308,6 @@ ninja.data = [{
           window.location.href = "/blog/2021/distill/";
         
       },
-    },{id: "post-a-post-with-github-metadata",
-      
-        title: "a post with github metadata",
-      
-      description: "a quick run down on accessing github metadata.",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2020/github-metadata/";
-        
-      },
     },{id: "post-a-post-with-twitter",
       
         title: "a post with twitter",
@@ -350,17 +339,6 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2015/math/";
-        
-      },
-    },{id: "post-a-post-with-code",
-      
-        title: "a post with code",
-      
-      description: "an example of a blog post with some code",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2015/code/";
         
       },
     },{id: "post-a-post-with-images",
