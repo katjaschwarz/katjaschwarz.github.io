@@ -25,7 +25,7 @@ enable_publication_badges: false
   selected = True,
 }
 
-@inproceedings{Schwarz2025worlds,
+@inproceedings{Fischer2025flowr,
   title = {FlowR: Flowing from Sparse to Dense 3D Reconstructions},
   author = {Fischer, Tobias and Rota Bulò, Samuel and Yang, Yung-Hsu and Keetha, Nikhil and Porzi, Lorenzo and M\"uller, Norman and Schwarz, Katja and Luiten, Jonathon and Pollefeys, Marc and Kontschieder, Peter},
   booktitle = ICCV,
@@ -49,6 +49,19 @@ enable_publication_badges: false
   preview = {ggs.gif},
   website = {https://katjaschwarz.github.io/ggs},
   selected = True,
+}
+
+@inproceedings{Esposito2025volsurf,
+  title = {Volumetric Surfaces: Representing Fuzzy Geometries with Layered Meshes},
+  author = {Esposito, Stefano and Chen, Anpei and Reiser, Christian and Rota Bulò, Samuel and Porzi, Lorenzo and Schwarz, Katja and Richardt, Christian and Zollhoefer, Michael and Kontschieder, Peter and Geiger, Andreas},
+  booktitle = CVPR,
+  booktitle_short = {CVPR},
+  year = {2025},
+  abstract = {High-quality real-time view synthesis methods are based on volume rendering, splatting, or surface rendering. While surface-based methods generally are the fastest, they cannot faithfully model fuzzy geometry like hair. In turn, alpha-blending techniques excel at representing fuzzy materials but require an unbounded number of samples per ray (P1). Further overheads are induced by empty space skipping in volume rendering (P2) and sorting input primitives in splatting (P3). We present a novel representation for real-time view synthesis where the (P1) number of sampling locations is small and bounded, (P2) sampling locations are efficiently found via rasterization, and (P3) rendering is sorting-free. We achieve this by representing objects as semi-transparent multi-layer meshes, rendered in fixed order. First, we model surface layers as SDF shells with optimal spacing learned during training. Then, we bake them as meshes and fit UV textures. Unlike single-surface methods, our multi-layer representation effectively models fuzzy objects. In contrast to volume-based and splatting-based methods, our approach enables real-time rendering on low-cost smartphones.},
+  pdf = {https://arxiv.org/abs/2409.02482},
+  preview = {volsurf.gif},
+  website = {https://autonomousvision.github.io/volsurfs/},
+  selected = False,
 }
 
 @InProceedings{Muller2024CVPR,
