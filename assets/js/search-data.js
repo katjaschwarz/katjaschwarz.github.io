@@ -118,7 +118,7 @@ ninja.data = [{
           section: "News",},{id: "news-three-papers-accepted-to-iccv",
           title: 'Three papers accepted to ICCV!',
           description: "",
-          section: "News",},{id: "news-i-m-excited-to-be-on-the-panel-of-the-fireside-chat-with-generative-ai-founders-by-the-t-quot-ubingen-ai-center",
+          section: "News",},{id: "news-i-m-excited-to-be-on-the-panel-of-the-fireside-chat-with-generative-ai-founders-by-the-tübingen-ai-center",
           title: 'I’m excited to be on the panel of the Fireside Chat with Generative...',
           description: "",
           section: "News",},{id: "projects-project-1",
