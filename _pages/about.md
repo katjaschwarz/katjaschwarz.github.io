@@ -19,7 +19,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-Passionate about generative modeling in 2D and 3D. Working at [SpAItial](http://spaitial.ai/). Ex-Meta AI Researcher. Previously PhD at Autonomous Vision Group in Tübingen.
+Passionate about generative modeling in 2D and 3D. Ex-Meta AI Researcher. Previously PhD at Autonomous Vision Group in Tübingen.
 
 My research lies at the intersection of computer vision and graphics and focuses on 3D vision. In particular, I am
 interested in enabeling machines to infer 3D representations from sparse observations, such as 2D images. I am
