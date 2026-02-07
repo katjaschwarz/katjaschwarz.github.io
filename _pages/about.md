@@ -16,7 +16,7 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 latest_posts: false # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 ---
 
 Passionate about generative modeling in 2D and 3D. Ex-Meta AI Researcher. Previously PhD at Autonomous Vision Group in Tübingen.
